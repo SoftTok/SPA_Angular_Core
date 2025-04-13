@@ -1,0 +1,78 @@
+<div class="form-container">
+  <h2>Formulario con Signals</h2>
+
+  <div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <input
+      type="text"
+      id="nombre"
+      [ngModel]="nombre()"
+      (ngModelChange)="nombre.set($event)"
+      class="form-control"
+      required
+    >
+    <div class="error-message" *ngIf="errorNombre()">{{ errorNombre() }}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="apellido">Apellido:</label>
+    <input
+      type="text"
+      id="apellido"
+      [ngModel]="apellido()"
+      (ngModelChange)="apellido.set($event)"
+      class="form-control"
+      required
+    >
+    <div class="error-message" *ngIf="errorApellido()">{{ errorApellido() }}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      [ngModel]="email()"
+      (ngModelChange)="email.set($event)"
+      class="form-control"
+      required
+    >
+    <div class="error-message" *ngIf="errorEmail()">{{ errorEmail() }}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="cedula">Cédula:</label>
+    <input
+      type="text"
+      id="cedula"
+      [ngModel]="cedula()"
+      (ngModelChange)="cedula.set($event)"
+      class="form-control"
+      required
+      pattern="[0-9]*"
+      inputmode="numeric"
+    >
+    <div class="error-message" *ngIf="errorCedula()">{{ errorCedula() }}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input
+      type="date"
+      id="fechaNacimiento"
+      [ngModel]="fechaNacimiento()"
+      (ngModelChange)="fechaNacimiento.set($event)"
+      class="form-control"
+      required
+    >
+    <div class="error-message" *ngIf="errorFechaNacimiento()">{{ errorFechaNacimiento() }}</div>
+  </div>
+
+  <button
+    class="btn btn-primary"
+    [disabled]="!formularioValido()"
+    (click)="guardar()"
+  >
+    Guardar
+  </button>
+</div>
