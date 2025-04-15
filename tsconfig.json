@@ -25,12 +25,9 @@
       "dom"
     ],
     "paths": {
-      "angular-library-grupo1/*": ["node_modules/angular-library-grupo1/*"]
     }
   },
-  "files": [
-    "src/types.d.ts"
-  ],
+
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
@@ -39,6 +36,6 @@
   },
   "include": [
     "src/**/*",
-    "node_modules/angular-library-grupo1/**/*.ts"
+
   ]
 }
